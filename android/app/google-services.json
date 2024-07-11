@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "951352846121",
+    "project_id": "pimmobil-90384",
+    "storage_bucket": "pimmobil-90384.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:951352846121:android:39e3967c445d8811f9f938",
+        "android_client_info": {
+          "package_name": "com.example.pim_mobile"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyApVkhVjbhsyeJKbLIW3u06wcAY9RVzkq0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
