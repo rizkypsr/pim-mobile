@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:pim_mobile/core/constants/constans.dart';
+import 'package:pim_mobile/core/network/interceptors/dio_cache_interceptor.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
@@ -35,6 +36,15 @@ class DioClient {
       ));
     }
 
+    _initializeInterceptors();
+
     _cancelToken = CancelToken();
+  }
+
+  Future<void> _initializeInterceptors() async {
+    var cacheInterceptor = CustomDioCacheInterceptor();
+    await cacheInterceptor.initializeCache();
+
+    _dio.interceptors.add(cacheInterceptor);
   }
 }
