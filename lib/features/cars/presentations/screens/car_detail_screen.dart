@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:pim_mobile/core/core.dart';
+import 'package:pim_mobile/core/extensions/locale_phone.dart';
 import 'package:pim_mobile/core/widgets/main_app_bar.dart';
 import 'package:pim_mobile/core/widgets/multi_carousel.dart';
 import 'package:pim_mobile/core/widgets/primary_button.dart';
@@ -40,23 +41,15 @@ class _CarDetailScreenState extends State<CarDetailScreen> {
   }
 
   Future<void> _launchUrl(String? phone) async {
-    String text = 'Halo, saya tertarik dengan mobil ini.';
-    String androidUrl = "whatsapp://send?phone=$phone&text=$text";
-    String iosUrl = "https://wa.me/$phone?text=${Uri.parse(text)}";
-    String webUrl = 'https://api.whatsapp.com/send/?phone=$phone&text=$text';
+    if (phone != null) {
+      String localePhone = phone.toLocale();
 
-    try {
-      if (Platform.isIOS) {
-        if (await canLaunchUrl(Uri.parse(iosUrl))) {
-          await launchUrl(Uri.parse(iosUrl));
-        }
-      } else {
-        if (await canLaunchUrl(Uri.parse(androidUrl))) {
-          await launchUrl(Uri.parse(androidUrl));
-        }
+      String text = 'Halo, saya tertarik dengan mobil ini.';
+      String url = "https://wa.me/$localePhone?text=${Uri.parse(text)}";
+
+      if (await canLaunchUrl(Uri.parse(url))) {
+        await launchUrl(Uri.parse(url));
       }
-    } catch (e) {
-      await launchUrl(Uri.parse(webUrl), mode: LaunchMode.externalApplication);
     }
   }
 

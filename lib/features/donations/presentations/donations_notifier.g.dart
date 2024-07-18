@@ -6,7 +6,7 @@ part of 'donations_notifier.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$donationsHash() => r'c4c7137d26304511283a9aabee47045a3c86f2ac';
+String _$donationsHash() => r'f675c1ffa5a9bd7264105973a9f55516934e9ee4';
 
 /// See also [Donations].
 @ProviderFor(Donations)

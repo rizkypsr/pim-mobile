@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:pim_mobile/core/core.dart';
-import 'package:pim_mobile/core/widgets/chip_button.dart';
+import 'package:pim_mobile/core/widgets/base_text_field.dart';
 import 'package:pim_mobile/core/widgets/error_box.dart';
 import 'package:pim_mobile/core/widgets/main_app_bar.dart';
-import 'package:pim_mobile/features/showrooms/presentations/showrooms_notifier.dart';
+import 'package:pim_mobile/features/showrooms/domain/params/showroom_filter_params.dart';
+import 'package:pim_mobile/features/showrooms/presentations/providers/showroom_filter_provider.dart';
+import 'package:pim_mobile/features/showrooms/presentations/providers/showroom_provider.dart';
 import 'package:pim_mobile/features/showrooms/presentations/widgets/showroom_list_item.dart';
 
 class ShowroomsScreen extends ConsumerWidget {
@@ -13,7 +14,7 @@ class ShowroomsScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final showroomRef = ref.watch(showroomProvider);
+    final showroomRef = ref.watch(getShowroomsProvider);
 
     return Scaffold(
       appBar: const MainAppBar.light(title: "Daftar Showroom"),
@@ -135,6 +136,20 @@ class ShowroomsScreen extends ConsumerWidget {
           //     },
           //   ),
           // ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+            child: BaseTextField(
+              name: 'search',
+              hint: 'Cari showroom...',
+              prefixIcon: const Icon(Icons.search),
+              textInputAction: TextInputAction.search,
+              onSubmitted: (value) {
+                ref.read(showroomFilterProvider.notifier).update(
+                      ShowroomFilterParams(showroomName: value),
+                    );
+              },
+            ),
+          ),
           Expanded(
             child: showroomRef.when(
               data: (showrooms) {

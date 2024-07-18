@@ -7,7 +7,7 @@ part of 'showroom_remote_datasource.dart';
 // **************************************************************************
 
 String _$showroomRemoteDatasourceImplHash() =>
-    r'464e687cc2b6fbbc66f8ea3fbf9aca79359395fd';
+    r'1123e465dd741c7ce933fb0afef804c950091740';
 
 /// See also [ShowroomRemoteDatasourceImpl].
 @ProviderFor(ShowroomRemoteDatasourceImpl)

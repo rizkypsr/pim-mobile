@@ -8,17 +8,27 @@ import 'package:pim_mobile/core/widgets/error_box.dart';
 import 'package:pim_mobile/core/widgets/main_app_bar.dart';
 import 'package:pim_mobile/features/cars/domain/params/car_filter_params.dart';
 import 'package:pim_mobile/features/cars/presentations/providers/car_filter_provider.dart';
-import 'package:pim_mobile/features/cars/presentations/providers/car_provider.dart';
 import 'package:pim_mobile/features/cars/presentations/widgets/car_filter_modal.dart';
 import 'package:pim_mobile/features/cars/presentations/widgets/car_list_item.dart';
 import 'package:pim_mobile/features/cars/presentations/widgets/sort_radio.dart';
+import 'package:pim_mobile/features/showrooms/domain/params/showroom_car_filter_params.dart';
+import 'package:pim_mobile/features/showrooms/domain/params/showroom_filter_params.dart';
+import 'package:pim_mobile/features/showrooms/presentations/providers/showroom_car_filter_provider.dart';
+import 'package:pim_mobile/features/showrooms/presentations/providers/showroom_car_provider.dart';
+import 'package:pim_mobile/features/showrooms/presentations/providers/showroom_filter_provider.dart';
+import 'package:pim_mobile/features/showrooms/presentations/widgets/showroom_car_filter_modal.dart';
 
-class CarsScreen extends ConsumerWidget {
-  const CarsScreen({super.key});
+class ShowroomCarScreen extends ConsumerWidget {
+  const ShowroomCarScreen({
+    super.key,
+    required this.showroomId,
+  });
+
+  final int showroomId;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final carsRef = ref.watch(getCarsProvider);
+    final carsRef = ref.watch(getCarsByShowroomProvider(showroomId));
 
     return Scaffold(
       appBar: const MainAppBar.light(title: "Daftar Mobil"),
@@ -38,8 +48,8 @@ class CarsScreen extends ConsumerWidget {
                     prefixIcon: const Icon(Icons.search),
                     textInputAction: TextInputAction.search,
                     onSubmitted: (value) {
-                      ref.read(carFilterProvider.notifier).update(
-                            CarFilterParams(carName: value),
+                      ref.read(showroomCarFilterProvider.notifier).update(
+                            ShowroomCarFilterParams(carName: value),
                           );
                     },
                   ),
@@ -59,10 +69,13 @@ class CarsScreen extends ConsumerWidget {
                             return SafeArea(
                               top: false,
                               child: SortRadio(
-                                filter: ref.watch(carFilterProvider).sort,
+                                filter:
+                                    ref.watch(showroomCarFilterProvider).sort,
                                 onSubmit: (String? value) {
-                                  ref.read(carFilterProvider.notifier).update(
-                                        CarFilterParams(sort: value),
+                                  ref
+                                      .read(showroomCarFilterProvider.notifier)
+                                      .update(
+                                        ShowroomCarFilterParams(sort: value),
                                       );
                                   Navigator.pop(context);
                                 },
@@ -81,7 +94,7 @@ class CarsScreen extends ConsumerWidget {
                       onPressed: () {
                         showBarModalBottomSheet(
                           context: context,
-                          builder: (context) => const CarFilterModal(),
+                          builder: (context) => const ShowroomCarFilterModal(),
                         );
                       },
                     ),

@@ -1,27 +1,26 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'car_remote_datasource.dart';
+part of 'showroom_filter_provider.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$carRemoteDataSourceImplHash() =>
-    r'b1fa3c127c738819ccf3400ac1810265f16ed52e';
+String _$showroomFilterHash() => r'fdf27986567319ec0a5383b6047e26654504a702';
 
-/// See also [CarRemoteDataSourceImpl].
-@ProviderFor(CarRemoteDataSourceImpl)
-final carRemoteDataSourceImplProvider =
-    AutoDisposeAsyncNotifierProvider<CarRemoteDataSourceImpl, void>.internal(
-  CarRemoteDataSourceImpl.new,
-  name: r'carRemoteDataSourceImplProvider',
+/// See also [ShowroomFilter].
+@ProviderFor(ShowroomFilter)
+final showroomFilterProvider =
+    AutoDisposeNotifierProvider<ShowroomFilter, ShowroomFilterParams>.internal(
+  ShowroomFilter.new,
+  name: r'showroomFilterProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : _$carRemoteDataSourceImplHash,
+      : _$showroomFilterHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef _$CarRemoteDataSourceImpl = AutoDisposeAsyncNotifier<void>;
+typedef _$ShowroomFilter = AutoDisposeNotifier<ShowroomFilterParams>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

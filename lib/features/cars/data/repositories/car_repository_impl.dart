@@ -52,36 +52,6 @@ class CarRepositoryImpl implements CarRepository {
       return Left(DataSource.noInternetConnection.getFailure());
     }
   }
-
-  @override
-  Future<Either<Failure, List<CarEntity>>> getCarsByShowroomId(
-    int? showroomId,
-    int? minPrice,
-    int? maxPrice,
-    String? brandName,
-    String? year,
-    int? cityId, {
-    String? sort,
-  }) async {
-    if (await networkInfo.isConnected) {
-      try {
-        final cars = await remoteDataSource.getCarsByShowroomId(
-          showroomId,
-          minPrice,
-          maxPrice,
-          brandName,
-          year,
-          cityId,
-          sort: sort,
-        );
-        return Right(cars.map((car) => car.toEntity()).toList());
-      } catch (e) {
-        return Left(ErrorHandler.handle(e).failure);
-      }
-    } else {
-      return Left(DataSource.noInternetConnection.getFailure());
-    }
-  }
 }
 
 @riverpod

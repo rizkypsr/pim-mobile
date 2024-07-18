@@ -15,7 +15,7 @@ class Cities extends _$Cities {
 
   Future<List<CityEntity>> getCities() async {
     final getCityUsecase =
-        await ref.read(getCitiesUseCaseProvider).call(NoParams());
+        await ref.read(getCitiesUseCaseProvider).call(null, NoParams());
 
     return getCityUsecase.fold((failure) {
       throw Exception("Failed to get cities: $failure");

@@ -7,7 +7,7 @@ part of 'get_cars_by_showroom_id.dart';
 // **************************************************************************
 
 String _$getCarsByShowroomIdUseCaseHash() =>
-    r'a70056e63fc6d126943804c67e3b1268512a8858';
+    r'e0b8d1a09f91ce13aa269a4c4103f87630410f55';
 
 /// See also [getCarsByShowroomIdUseCase].
 @ProviderFor(getCarsByShowroomIdUseCase)

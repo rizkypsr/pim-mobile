@@ -11,8 +11,11 @@ class HomeScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'PIM',
+        centerTitle: true,
+        title: Image.asset(
+          'assets/images/logo.png',
+          fit: BoxFit.cover,
+          width: 100,
         ),
       ),
       body: Column(

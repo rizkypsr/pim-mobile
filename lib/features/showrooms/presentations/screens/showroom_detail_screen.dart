@@ -5,6 +5,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pim_mobile/core/commons/ui_colors.dart';
+import 'package:pim_mobile/core/extensions/locale_phone.dart';
 import 'package:pim_mobile/core/widgets/main_app_bar.dart';
 import 'package:pim_mobile/core/widgets/multi_carousel.dart';
 import 'package:pim_mobile/core/widgets/primary_button.dart';
@@ -44,23 +45,15 @@ class _ShowroomDetailScreenState extends ConsumerState<ShowroomDetailScreen> {
   }
 
   Future<void> _launchUrl(String? phone) async {
-    String text = 'Halo, saya tertarik dengan mobil ini.';
-    String androidUrl = "whatsapp://send?phone=$phone&text=$text";
-    String iosUrl = "https://wa.me/$phone?text=${Uri.parse(text)}";
-    String webUrl = 'https://api.whatsapp.com/send/?phone=$phone&text=$text';
+    if (phone != null) {
+      String localePhone = phone.toLocale();
 
-    try {
-      if (Platform.isIOS) {
-        if (await canLaunchUrl(Uri.parse(iosUrl))) {
-          await launchUrl(Uri.parse(iosUrl));
-        }
-      } else {
-        if (await canLaunchUrl(Uri.parse(androidUrl))) {
-          await launchUrl(Uri.parse(androidUrl));
-        }
+      String text = 'Halo, saya ingin bertanya tentang showroom ini.';
+      String url = "https://wa.me/$localePhone?text=${Uri.parse(text)}";
+
+      if (await canLaunchUrl(Uri.parse(url))) {
+        await launchUrl(Uri.parse(url));
       }
-    } catch (e) {
-      await launchUrl(Uri.parse(webUrl), mode: LaunchMode.externalApplication);
     }
   }
 
@@ -172,6 +165,7 @@ class _ShowroomDetailScreenState extends ConsumerState<ShowroomDetailScreen> {
                 height: 300,
                 color: Colors.white,
                 child: CarListSection(
+                  showroomId: widget.showroom.id,
                   cars: widget.showroom.cars,
                 ),
               ),
@@ -219,6 +213,7 @@ class _ShowroomDetailScreenState extends ConsumerState<ShowroomDetailScreen> {
                     height: 300,
                     color: Colors.white,
                     child: CarListSection(
+                      showroomId: widget.showroom.id,
                       cars: widget.showroom.cars,
                     ),
                   ),

@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'get_cars_by_showroom_id_params.dart';
+part of 'showroom_car_filter_params.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,48 +14,48 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-GetCarsByShowroomIdParams _$GetCarsByShowroomIdParamsFromJson(
-    Map<String, dynamic> json) {
-  return _GetCarsByShowroomIdParams.fromJson(json);
-}
-
 /// @nodoc
-mixin _$GetCarsByShowroomIdParams {
+mixin _$ShowroomCarFilterParams {
   int? get showroomId => throw _privateConstructorUsedError;
   int? get minPrice => throw _privateConstructorUsedError;
   int? get maxPrice => throw _privateConstructorUsedError;
+  String? get carName => throw _privateConstructorUsedError;
   String? get brandName => throw _privateConstructorUsedError;
-  String? get year => throw _privateConstructorUsedError;
+  String? get fromYear => throw _privateConstructorUsedError;
+  String? get toYear => throw _privateConstructorUsedError;
   int? get cityId => throw _privateConstructorUsedError;
+  String? get cityName => throw _privateConstructorUsedError;
   String? get sort => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $GetCarsByShowroomIdParamsCopyWith<GetCarsByShowroomIdParams> get copyWith =>
+  $ShowroomCarFilterParamsCopyWith<ShowroomCarFilterParams> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $GetCarsByShowroomIdParamsCopyWith<$Res> {
-  factory $GetCarsByShowroomIdParamsCopyWith(GetCarsByShowroomIdParams value,
-          $Res Function(GetCarsByShowroomIdParams) then) =
-      _$GetCarsByShowroomIdParamsCopyWithImpl<$Res, GetCarsByShowroomIdParams>;
+abstract class $ShowroomCarFilterParamsCopyWith<$Res> {
+  factory $ShowroomCarFilterParamsCopyWith(ShowroomCarFilterParams value,
+          $Res Function(ShowroomCarFilterParams) then) =
+      _$ShowroomCarFilterParamsCopyWithImpl<$Res, ShowroomCarFilterParams>;
   @useResult
   $Res call(
       {int? showroomId,
       int? minPrice,
       int? maxPrice,
+      String? carName,
       String? brandName,
-      String? year,
+      String? fromYear,
+      String? toYear,
       int? cityId,
+      String? cityName,
       String? sort});
 }
 
 /// @nodoc
-class _$GetCarsByShowroomIdParamsCopyWithImpl<$Res,
-        $Val extends GetCarsByShowroomIdParams>
-    implements $GetCarsByShowroomIdParamsCopyWith<$Res> {
-  _$GetCarsByShowroomIdParamsCopyWithImpl(this._value, this._then);
+class _$ShowroomCarFilterParamsCopyWithImpl<$Res,
+        $Val extends ShowroomCarFilterParams>
+    implements $ShowroomCarFilterParamsCopyWith<$Res> {
+  _$ShowroomCarFilterParamsCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -68,9 +68,12 @@ class _$GetCarsByShowroomIdParamsCopyWithImpl<$Res,
     Object? showroomId = freezed,
     Object? minPrice = freezed,
     Object? maxPrice = freezed,
+    Object? carName = freezed,
     Object? brandName = freezed,
-    Object? year = freezed,
+    Object? fromYear = freezed,
+    Object? toYear = freezed,
     Object? cityId = freezed,
+    Object? cityName = freezed,
     Object? sort = freezed,
   }) {
     return _then(_value.copyWith(
@@ -86,18 +89,30 @@ class _$GetCarsByShowroomIdParamsCopyWithImpl<$Res,
           ? _value.maxPrice
           : maxPrice // ignore: cast_nullable_to_non_nullable
               as int?,
+      carName: freezed == carName
+          ? _value.carName
+          : carName // ignore: cast_nullable_to_non_nullable
+              as String?,
       brandName: freezed == brandName
           ? _value.brandName
           : brandName // ignore: cast_nullable_to_non_nullable
               as String?,
-      year: freezed == year
-          ? _value.year
-          : year // ignore: cast_nullable_to_non_nullable
+      fromYear: freezed == fromYear
+          ? _value.fromYear
+          : fromYear // ignore: cast_nullable_to_non_nullable
+              as String?,
+      toYear: freezed == toYear
+          ? _value.toYear
+          : toYear // ignore: cast_nullable_to_non_nullable
               as String?,
       cityId: freezed == cityId
           ? _value.cityId
           : cityId // ignore: cast_nullable_to_non_nullable
               as int?,
+      cityName: freezed == cityName
+          ? _value.cityName
+          : cityName // ignore: cast_nullable_to_non_nullable
+              as String?,
       sort: freezed == sort
           ? _value.sort
           : sort // ignore: cast_nullable_to_non_nullable
@@ -107,32 +122,35 @@ class _$GetCarsByShowroomIdParamsCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$GetCarsByShowroomIdParamsImplCopyWith<$Res>
-    implements $GetCarsByShowroomIdParamsCopyWith<$Res> {
-  factory _$$GetCarsByShowroomIdParamsImplCopyWith(
-          _$GetCarsByShowroomIdParamsImpl value,
-          $Res Function(_$GetCarsByShowroomIdParamsImpl) then) =
-      __$$GetCarsByShowroomIdParamsImplCopyWithImpl<$Res>;
+abstract class _$$ShowroomCarFilterParamsImplCopyWith<$Res>
+    implements $ShowroomCarFilterParamsCopyWith<$Res> {
+  factory _$$ShowroomCarFilterParamsImplCopyWith(
+          _$ShowroomCarFilterParamsImpl value,
+          $Res Function(_$ShowroomCarFilterParamsImpl) then) =
+      __$$ShowroomCarFilterParamsImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
       {int? showroomId,
       int? minPrice,
       int? maxPrice,
+      String? carName,
       String? brandName,
-      String? year,
+      String? fromYear,
+      String? toYear,
       int? cityId,
+      String? cityName,
       String? sort});
 }
 
 /// @nodoc
-class __$$GetCarsByShowroomIdParamsImplCopyWithImpl<$Res>
-    extends _$GetCarsByShowroomIdParamsCopyWithImpl<$Res,
-        _$GetCarsByShowroomIdParamsImpl>
-    implements _$$GetCarsByShowroomIdParamsImplCopyWith<$Res> {
-  __$$GetCarsByShowroomIdParamsImplCopyWithImpl(
-      _$GetCarsByShowroomIdParamsImpl _value,
-      $Res Function(_$GetCarsByShowroomIdParamsImpl) _then)
+class __$$ShowroomCarFilterParamsImplCopyWithImpl<$Res>
+    extends _$ShowroomCarFilterParamsCopyWithImpl<$Res,
+        _$ShowroomCarFilterParamsImpl>
+    implements _$$ShowroomCarFilterParamsImplCopyWith<$Res> {
+  __$$ShowroomCarFilterParamsImplCopyWithImpl(
+      _$ShowroomCarFilterParamsImpl _value,
+      $Res Function(_$ShowroomCarFilterParamsImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -141,12 +159,15 @@ class __$$GetCarsByShowroomIdParamsImplCopyWithImpl<$Res>
     Object? showroomId = freezed,
     Object? minPrice = freezed,
     Object? maxPrice = freezed,
+    Object? carName = freezed,
     Object? brandName = freezed,
-    Object? year = freezed,
+    Object? fromYear = freezed,
+    Object? toYear = freezed,
     Object? cityId = freezed,
+    Object? cityName = freezed,
     Object? sort = freezed,
   }) {
-    return _then(_$GetCarsByShowroomIdParamsImpl(
+    return _then(_$ShowroomCarFilterParamsImpl(
       showroomId: freezed == showroomId
           ? _value.showroomId
           : showroomId // ignore: cast_nullable_to_non_nullable
@@ -159,18 +180,30 @@ class __$$GetCarsByShowroomIdParamsImplCopyWithImpl<$Res>
           ? _value.maxPrice
           : maxPrice // ignore: cast_nullable_to_non_nullable
               as int?,
+      carName: freezed == carName
+          ? _value.carName
+          : carName // ignore: cast_nullable_to_non_nullable
+              as String?,
       brandName: freezed == brandName
           ? _value.brandName
           : brandName // ignore: cast_nullable_to_non_nullable
               as String?,
-      year: freezed == year
-          ? _value.year
-          : year // ignore: cast_nullable_to_non_nullable
+      fromYear: freezed == fromYear
+          ? _value.fromYear
+          : fromYear // ignore: cast_nullable_to_non_nullable
+              as String?,
+      toYear: freezed == toYear
+          ? _value.toYear
+          : toYear // ignore: cast_nullable_to_non_nullable
               as String?,
       cityId: freezed == cityId
           ? _value.cityId
           : cityId // ignore: cast_nullable_to_non_nullable
               as int?,
+      cityName: freezed == cityName
+          ? _value.cityName
+          : cityName // ignore: cast_nullable_to_non_nullable
+              as String?,
       sort: freezed == sort
           ? _value.sort
           : sort // ignore: cast_nullable_to_non_nullable
@@ -180,19 +213,19 @@ class __$$GetCarsByShowroomIdParamsImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
-class _$GetCarsByShowroomIdParamsImpl implements _GetCarsByShowroomIdParams {
-  const _$GetCarsByShowroomIdParamsImpl(
+
+class _$ShowroomCarFilterParamsImpl implements _ShowroomCarFilterParams {
+  const _$ShowroomCarFilterParamsImpl(
       {this.showroomId,
       this.minPrice,
       this.maxPrice,
+      this.carName,
       this.brandName,
-      this.year,
+      this.fromYear,
+      this.toYear,
       this.cityId,
-      this.sort = 'desc'});
-
-  factory _$GetCarsByShowroomIdParamsImpl.fromJson(Map<String, dynamic> json) =>
-      _$$GetCarsByShowroomIdParamsImplFromJson(json);
+      this.cityName,
+      this.sort});
 
   @override
   final int? showroomId;
@@ -201,70 +234,72 @@ class _$GetCarsByShowroomIdParamsImpl implements _GetCarsByShowroomIdParams {
   @override
   final int? maxPrice;
   @override
+  final String? carName;
+  @override
   final String? brandName;
   @override
-  final String? year;
+  final String? fromYear;
+  @override
+  final String? toYear;
   @override
   final int? cityId;
   @override
-  @JsonKey()
+  final String? cityName;
+  @override
   final String? sort;
 
   @override
   String toString() {
-    return 'GetCarsByShowroomIdParams(showroomId: $showroomId, minPrice: $minPrice, maxPrice: $maxPrice, brandName: $brandName, year: $year, cityId: $cityId, sort: $sort)';
+    return 'ShowroomCarFilterParams(showroomId: $showroomId, minPrice: $minPrice, maxPrice: $maxPrice, carName: $carName, brandName: $brandName, fromYear: $fromYear, toYear: $toYear, cityId: $cityId, cityName: $cityName, sort: $sort)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetCarsByShowroomIdParamsImpl &&
+            other is _$ShowroomCarFilterParamsImpl &&
             (identical(other.showroomId, showroomId) ||
                 other.showroomId == showroomId) &&
             (identical(other.minPrice, minPrice) ||
                 other.minPrice == minPrice) &&
             (identical(other.maxPrice, maxPrice) ||
                 other.maxPrice == maxPrice) &&
+            (identical(other.carName, carName) || other.carName == carName) &&
             (identical(other.brandName, brandName) ||
                 other.brandName == brandName) &&
-            (identical(other.year, year) || other.year == year) &&
+            (identical(other.fromYear, fromYear) ||
+                other.fromYear == fromYear) &&
+            (identical(other.toYear, toYear) || other.toYear == toYear) &&
             (identical(other.cityId, cityId) || other.cityId == cityId) &&
+            (identical(other.cityName, cityName) ||
+                other.cityName == cityName) &&
             (identical(other.sort, sort) || other.sort == sort));
   }
 
-  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, showroomId, minPrice, maxPrice,
-      brandName, year, cityId, sort);
+      carName, brandName, fromYear, toYear, cityId, cityName, sort);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GetCarsByShowroomIdParamsImplCopyWith<_$GetCarsByShowroomIdParamsImpl>
-      get copyWith => __$$GetCarsByShowroomIdParamsImplCopyWithImpl<
-          _$GetCarsByShowroomIdParamsImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$GetCarsByShowroomIdParamsImplToJson(
-      this,
-    );
-  }
+  _$$ShowroomCarFilterParamsImplCopyWith<_$ShowroomCarFilterParamsImpl>
+      get copyWith => __$$ShowroomCarFilterParamsImplCopyWithImpl<
+          _$ShowroomCarFilterParamsImpl>(this, _$identity);
 }
 
-abstract class _GetCarsByShowroomIdParams implements GetCarsByShowroomIdParams {
-  const factory _GetCarsByShowroomIdParams(
+abstract class _ShowroomCarFilterParams implements ShowroomCarFilterParams {
+  const factory _ShowroomCarFilterParams(
       {final int? showroomId,
       final int? minPrice,
       final int? maxPrice,
+      final String? carName,
       final String? brandName,
-      final String? year,
+      final String? fromYear,
+      final String? toYear,
       final int? cityId,
-      final String? sort}) = _$GetCarsByShowroomIdParamsImpl;
-
-  factory _GetCarsByShowroomIdParams.fromJson(Map<String, dynamic> json) =
-      _$GetCarsByShowroomIdParamsImpl.fromJson;
+      final String? cityName,
+      final String? sort}) = _$ShowroomCarFilterParamsImpl;
 
   @override
   int? get showroomId;
@@ -273,15 +308,21 @@ abstract class _GetCarsByShowroomIdParams implements GetCarsByShowroomIdParams {
   @override
   int? get maxPrice;
   @override
+  String? get carName;
+  @override
   String? get brandName;
   @override
-  String? get year;
+  String? get fromYear;
+  @override
+  String? get toYear;
   @override
   int? get cityId;
+  @override
+  String? get cityName;
   @override
   String? get sort;
   @override
   @JsonKey(ignore: true)
-  _$$GetCarsByShowroomIdParamsImplCopyWith<_$GetCarsByShowroomIdParamsImpl>
+  _$$ShowroomCarFilterParamsImplCopyWith<_$ShowroomCarFilterParamsImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

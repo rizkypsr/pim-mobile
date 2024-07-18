@@ -1,25 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:go_router/go_router.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:pim_mobile/core/widgets/primary_button.dart';
-import 'package:pim_mobile/features/cars/domain/params/car_filter_params.dart';
-import 'package:pim_mobile/features/cars/presentations/providers/car_filter_provider.dart';
 
-class SortRadio extends HookConsumerWidget {
+class SortRadio extends HookWidget {
   const SortRadio({
     super.key,
+    required this.filter,
     required this.onSubmit,
   });
 
+  final dynamic filter;
   final Function(String?) onSubmit;
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final filter = ref.watch(carFilterProvider);
-
+  Widget build(BuildContext context) {
     var isValueChange = useState<bool>(false);
-    var selectedValue = useState<String>(filter.sort ?? 'desc');
+    var selectedValue = useState<String>(filter ?? 'desc');
 
     return Column(
       mainAxisSize: MainAxisSize.min,
@@ -60,10 +56,7 @@ class SortRadio extends HookConsumerWidget {
                 width: double.infinity,
                 child: PrimaryButton(
                   onPressed: () {
-                    ref.read(carFilterProvider.notifier).update(
-                          CarFilterParams(sort: selectedValue.value),
-                        );
-                    context.pop();
+                    onSubmit(selectedValue.value);
                   },
                   label: 'Terapkan',
                 ),

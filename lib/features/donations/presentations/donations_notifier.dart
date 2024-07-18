@@ -14,7 +14,7 @@ class Donations extends _$Donations {
 
   Future<DonationEntity> getDonations() async {
     final getDonationsUsecase =
-        await ref.read(getDonationsUseCaseProvider).call(NoParams());
+        await ref.read(getDonationsUseCaseProvider).call(null, NoParams());
 
     return getDonationsUsecase.fold((failure) {
       throw failure;

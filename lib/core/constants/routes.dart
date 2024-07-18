@@ -6,6 +6,7 @@ import 'package:pim_mobile/features/donations/presentations/screens/donation_scr
 import 'package:pim_mobile/features/home/presentations/home_screen.dart';
 import 'package:pim_mobile/features/home/presentations/service_form_screen.dart';
 import 'package:pim_mobile/features/showrooms/domain/entities/showroom_entity.dart';
+import 'package:pim_mobile/features/showrooms/presentations/screens/showroom_car_screen.dart';
 import 'package:pim_mobile/features/showrooms/presentations/screens/showroom_detail_screen.dart';
 import 'package:pim_mobile/features/showrooms/presentations/screens/showrooms_screen.dart';
 
@@ -15,6 +16,7 @@ class Routes {
   static const String carDetail = '/car-detail';
   static const String showrooms = '/showrooms';
   static const String showroomDetail = '/showroom-detail';
+  static const String showroomCars = '/showroom-cars';
   static const String serviceForm = '/service-form';
   static const String donations = '/donations';
   static const String notFound = '/not-found';
@@ -48,6 +50,14 @@ class Routes {
           final showroom = state.extra as ShowroomEntity;
 
           return ShowroomDetailScreen(showroom: showroom);
+        },
+      ),
+      GoRoute(
+        path: showroomCars,
+        builder: (context, state) {
+          final showroomId = state.extra as int;
+
+          return ShowroomCarScreen(showroomId: showroomId);
         },
       ),
       GoRoute(

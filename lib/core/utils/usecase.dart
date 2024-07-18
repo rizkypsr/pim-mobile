@@ -3,7 +3,7 @@ import 'package:equatable/equatable.dart';
 import 'package:pim_mobile/core/core.dart';
 
 abstract class UseCase<Type, Params> {
-  Future<Either<Failure, dynamic>> call(Params params);
+  Future<Either<Failure, dynamic>> call(int? id, Params params);
 }
 
 class NoParams extends Equatable {

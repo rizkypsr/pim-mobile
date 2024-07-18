@@ -13,7 +13,7 @@ class SubmitServiceUsecase implements UseCase<String, SubmitServiceParams> {
   SubmitServiceUsecase({required this.repository});
 
   @override
-  Future<Either<Failure, String>> call(SubmitServiceParams params) {
+  Future<Either<Failure, String>> call(int? id, SubmitServiceParams params) {
     return repository.submitService(
       params.cityId!,
       params.name!,

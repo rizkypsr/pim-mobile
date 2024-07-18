@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
-import 'package:pim_mobile/core/commons/ui_colors.dart';
 import 'package:pim_mobile/core/widgets/filled_dropdown.dart';
 import 'package:pim_mobile/core/widgets/filled_text_field.dart';
 import 'package:pim_mobile/core/widgets/main_app_bar.dart';
@@ -29,6 +28,7 @@ class _ServiceFormScreenState extends ConsumerState<ServiceFormScreen> {
 
     return Scaffold(
       appBar: MainAppBar.filled(title: widget.label),
+      resizeToAvoidBottomInset: false,
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16),

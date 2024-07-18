@@ -14,7 +14,10 @@ class GetCarsUsecase implements UseCase<CarEntity, CarFilterParams> {
   GetCarsUsecase({required this.repository});
 
   @override
-  Future<Either<Failure, List<CarEntity>>> call(CarFilterParams params) {
+  Future<Either<Failure, List<CarEntity>>> call(
+    int? id,
+    CarFilterParams params,
+  ) {
     return repository.getCars(
       params.minPrice,
       params.maxPrice,

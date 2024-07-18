@@ -13,7 +13,7 @@ class GetCitiesUsecase implements UseCase<CityEntity, NoParams> {
   GetCitiesUsecase({required this.repository});
 
   @override
-  Future<Either<Failure, List<CityEntity>>> call(NoParams params) {
+  Future<Either<Failure, List<CityEntity>>> call(int? id, NoParams params) {
     return repository.getCities();
   }
 }

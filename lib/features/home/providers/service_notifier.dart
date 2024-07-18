@@ -31,7 +31,7 @@ class ServiceNotifier extends _$ServiceNotifier {
     );
 
     final submitServiceUsecase =
-        await ref.read(submitServiceUseCaseProvider).call(params);
+        await ref.read(submitServiceUseCaseProvider).call(null, params);
 
     submitServiceUsecase.fold((failure) {
       Fluttertoast.showToast(

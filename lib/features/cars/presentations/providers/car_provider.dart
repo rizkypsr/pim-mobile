@@ -9,7 +9,8 @@ part 'car_provider.g.dart';
 Future<List<CarEntity>> getCars(GetCarsRef ref) async {
   final filter = ref.watch(carFilterProvider);
 
-  final getCarUsecase = await ref.read(getCarsUseCaseProvider).call(filter);
+  final getCarUsecase =
+      await ref.read(getCarsUseCaseProvider).call(null, filter);
 
   return getCarUsecase.fold((failure) {
     throw failure;

@@ -61,12 +61,14 @@ class CarListItem extends StatelessWidget {
             style: const TextStyle(fontWeight: FontWeight.w800),
           ),
           const SizedBox(height: 8),
-          Text(
-            'Kota ${car.city}',
-            maxLines: 2,
-            overflow: TextOverflow.ellipsis,
-            style: const TextStyle(fontSize: 13),
-          ),
+          car.city != null
+              ? Text(
+                  'Kota ${car.city}',
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  style: const TextStyle(fontSize: 13),
+                )
+              : const SizedBox(),
         ],
       ),
     );

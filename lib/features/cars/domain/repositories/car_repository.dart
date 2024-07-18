@@ -13,14 +13,4 @@ abstract class CarRepository {
     int? cityId, {
     String? sort,
   });
-
-  Future<Either<Failure, List<CarEntity>>> getCarsByShowroomId(
-    int? showroomId,
-    int? minPrice,
-    int? maxPrice,
-    String? brandName,
-    String? year,
-    int? cityId, {
-    String? sort,
-  });
 }

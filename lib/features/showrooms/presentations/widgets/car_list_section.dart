@@ -1,10 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:pim_mobile/core/constants/constans.dart';
+import 'package:pim_mobile/core/core.dart';
 import 'package:pim_mobile/features/cars/domain/entities/car_entity.dart';
 import 'package:pim_mobile/features/showrooms/presentations/widgets/car_list_item.dart';
 
 class CarListSection extends StatelessWidget {
-  const CarListSection({super.key, required this.cars});
+  const CarListSection({
+    super.key,
+    required this.showroomId,
+    required this.cars,
+  });
 
+  final int showroomId;
   final List<CarEntity> cars;
 
   @override
@@ -12,11 +20,28 @@ class CarListSection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text(
-          'Daftar Mobil',
-          style: TextStyle(
-            fontWeight: FontWeight.w600,
-          ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            const Text(
+              'Daftar Mobil',
+              style: TextStyle(
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+            TextButton(
+              onPressed: () {
+                context.push(Routes.showroomCars, extra: showroomId);
+              },
+              child: Text(
+                'Lihat Semua',
+                style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                      color: UIColor.blue,
+                      fontWeight: FontWeight.w600,
+                    ),
+              ),
+            ),
+          ],
         ),
         cars.isEmpty ? const SizedBox(height: 16) : const SizedBox(),
         cars.isNotEmpty

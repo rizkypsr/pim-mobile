@@ -17,16 +17,6 @@ abstract class CarRemoteDataSource {
     int? cityId, {
     String? sort,
   });
-
-  Future<List<CarModel>> getCarsByShowroomId(
-    int? showroomId,
-    int? minPrice,
-    int? maxPrice,
-    String? brandName,
-    String? year,
-    int? cityId, {
-    String? sort,
-  });
 }
 
 @riverpod
@@ -80,60 +70,6 @@ class CarRemoteDataSourceImpl extends _$CarRemoteDataSourceImpl
 
     var response = await dioService.get(Endpoints.getPath(
       Endpoints.getCars,
-      query: queryString,
-    ));
-
-    if (response.data['data'] != null) {
-      return (response.data['data'] as List)
-          .map((data) => CarModel.fromJson(data))
-          .toList();
-    }
-
-    return [];
-  }
-
-  @override
-  Future<List<CarModel>> getCarsByShowroomId(
-    int? showroomId,
-    int? minPrice,
-    int? maxPrice,
-    String? brandName,
-    String? year,
-    int? cityId, {
-    String? sort,
-  }) async {
-    final dioService = ref.read(dioProvider).dio();
-
-    var params = {
-      'filters': {
-        'price': {
-          '\$gte': minPrice,
-          '\$lte': maxPrice,
-        },
-        'brand_name': {
-          '\$contains': brandName,
-        },
-        'year': {
-          '\$eq': year,
-        },
-        'showroom': {
-          'city_id': {
-            '\$eq': cityId,
-          },
-        },
-      },
-      'sort': 'created_at:$sort',
-    };
-
-    String queryString = QS.encode(
-      params,
-      const EncodeOptions(
-        skipNulls: true,
-      ),
-    );
-
-    var response = await dioService.get(Endpoints.getPath(
-      Endpoints.getCarsByShowroomId + showroomId.toString(),
       query: queryString,
     ));
 

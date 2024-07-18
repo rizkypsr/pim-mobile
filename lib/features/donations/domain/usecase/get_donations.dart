@@ -13,7 +13,7 @@ class GetDonationsUseCase extends UseCase<List<DonationEntity>, NoParams> {
   GetDonationsUseCase(this.repository);
 
   @override
-  Future<Either<Failure, DonationEntity>> call(NoParams params) async {
+  Future<Either<Failure, DonationEntity>> call(int? id, NoParams params) async {
     return await repository.getDonations();
   }
 }
