@@ -1,5 +1,3 @@
-import 'package:drop_down_list/drop_down_list.dart';
-import 'package:drop_down_list/model/selected_list_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -7,7 +5,6 @@ import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:pim_mobile/core/core.dart';
 import 'package:pim_mobile/core/widgets/primary_button.dart';
 import 'package:pim_mobile/features/cars/presentations/widgets/year_dialog.dart';
-import 'package:pim_mobile/features/cities/presentations/cities_notifier.dart';
 import 'package:pim_mobile/features/showrooms/domain/params/showroom_car_filter_params.dart';
 import 'package:pim_mobile/features/showrooms/presentations/providers/showroom_car_filter_provider.dart';
 
@@ -16,7 +13,6 @@ class ShowroomCarFilterModal extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final citiesRef = ref.watch(citiesProvider.notifier);
     final carFilter = ref.watch(showroomCarFilterProvider);
 
     final minPriceController = useTextEditingController(

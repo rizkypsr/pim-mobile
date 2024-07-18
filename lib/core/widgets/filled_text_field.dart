@@ -65,12 +65,12 @@ class FilledTextField extends StatelessWidget {
             enabledBorder: const OutlineInputBorder(
               borderSide: BorderSide.none,
             ),
-            errorBorder: OutlineInputBorder(
+            errorBorder: const OutlineInputBorder(
               borderSide: BorderSide(
                 color: Colors.red,
               ),
             ),
-            focusedErrorBorder: OutlineInputBorder(
+            focusedErrorBorder: const OutlineInputBorder(
               borderSide: BorderSide(
                 color: Colors.red,
               ),

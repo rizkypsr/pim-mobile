@@ -6,16 +6,11 @@ import 'package:pim_mobile/core/widgets/base_text_field.dart';
 import 'package:pim_mobile/core/widgets/chip_button.dart';
 import 'package:pim_mobile/core/widgets/error_box.dart';
 import 'package:pim_mobile/core/widgets/main_app_bar.dart';
-import 'package:pim_mobile/features/cars/domain/params/car_filter_params.dart';
-import 'package:pim_mobile/features/cars/presentations/providers/car_filter_provider.dart';
-import 'package:pim_mobile/features/cars/presentations/widgets/car_filter_modal.dart';
 import 'package:pim_mobile/features/cars/presentations/widgets/car_list_item.dart';
 import 'package:pim_mobile/features/cars/presentations/widgets/sort_radio.dart';
 import 'package:pim_mobile/features/showrooms/domain/params/showroom_car_filter_params.dart';
-import 'package:pim_mobile/features/showrooms/domain/params/showroom_filter_params.dart';
 import 'package:pim_mobile/features/showrooms/presentations/providers/showroom_car_filter_provider.dart';
 import 'package:pim_mobile/features/showrooms/presentations/providers/showroom_car_provider.dart';
-import 'package:pim_mobile/features/showrooms/presentations/providers/showroom_filter_provider.dart';
 import 'package:pim_mobile/features/showrooms/presentations/widgets/showroom_car_filter_modal.dart';
 
 class ShowroomCarScreen extends ConsumerWidget {
